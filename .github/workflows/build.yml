@@ -26,7 +26,7 @@ jobs:
       run: chmod +x gradlew
 
     - name: Clean and Build with Gradle
-      run: ./gradlew clean assembleDebug
+      run: ./gradlew clean :app:assembleDebug
 
     - name: List APK contents
       run: ls -R app/build/outputs/
