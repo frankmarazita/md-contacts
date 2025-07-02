@@ -3,6 +3,7 @@ package com.example.mdcontacts
 import android.content.Context
 import org.commonmark.parser.Parser
 import org.commonmark.node.*
+import java.io.File
 import java.io.InputStream
 
 class ContactRepository(private val context: Context) {
@@ -11,6 +12,7 @@ class ContactRepository(private val context: Context) {
         val contacts = mutableListOf<Contact>()
         val parser = Parser.builder().build()
 
+        // Read from assets
         try {
             val contactFiles = context.assets.list("contacts")
             if (contactFiles != null) {
@@ -27,7 +29,25 @@ class ContactRepository(private val context: Context) {
             e.printStackTrace()
         }
 
-        return contacts
+        // Read from internal storage
+        try {
+            val internalFiles = context.filesDir.listFiles()
+            if (internalFiles != null) {
+                for (file in internalFiles) {
+                    if (file.isFile && file.name.endsWith(".md")) {
+                        val document = parser.parse(file.readText())
+                        val contact = parseContact(document)
+                        if (contact != null) {
+                            contacts.add(contact)
+                        }
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        return contacts.distinctBy { it.name } // Remove duplicates if any
     }
 
     private fun parseContact(document: Node): Contact? {

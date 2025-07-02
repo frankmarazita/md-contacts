@@ -1,5 +1,6 @@
 package com.example.mdcontacts
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,12 @@ class ContactAdapter(private val contacts: List<Contact>) :
         holder.nameTextView.text = contact.name
         holder.phoneTextView.text = contact.phone
         holder.emailTextView.text = contact.email
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, ContactDetailActivity::class.java)
+            intent.putExtra("contact", contact)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = contacts.size

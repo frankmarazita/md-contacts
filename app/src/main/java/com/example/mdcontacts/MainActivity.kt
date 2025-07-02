@@ -1,5 +1,6 @@
 package com.example.mdcontacts
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +22,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         fab.setOnClickListener {
-            Toast.makeText(this, "Add new contact", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, AddEditActivity::class.java)
+            startActivity(intent)
         }
     }
 }
