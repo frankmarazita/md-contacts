@@ -1,7 +1,7 @@
 const val PUBLISHING_GROUP = "com.github.frankmarazita.mdcontacts"
 
 object AppCoordinates {
-    const val APP_ID = "com.github.frankmarazita.mdcontacts.app"
+    const val APP_ID = "com.example.mdcontacts"
 
     const val APP_VERSION_NAME = "1.0.0"
     const val APP_VERSION_CODE = 1

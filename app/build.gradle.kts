@@ -8,9 +8,9 @@ android {
 
     defaultConfig {
         minSdk = libs.versions.min.sdk.version.get().toInt()
-        namespace = "com.example.mdcontacts"
+        namespace = "com.ncorti.kotlin.template.app"
 
-        applicationId = "com.example.mdcontacts"
+        applicationId = AppCoordinates.APP_ID
         versionCode = AppCoordinates.APP_VERSION_CODE
         versionName = AppCoordinates.APP_VERSION_NAME
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
