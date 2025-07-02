@@ -8,9 +8,9 @@ android {
 
     defaultConfig {
         minSdk = libs.versions.min.sdk.version.get().toInt()
-        namespace = "com.ncorti.kotlin.template.app"
+        namespace = "com.example.mdcontacts"
 
-        applicationId = AppCoordinates.APP_ID
+        applicationId = "com.example.mdcontacts"
         versionCode = AppCoordinates.APP_VERSION_CODE
         versionName = AppCoordinates.APP_VERSION_NAME
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -63,6 +63,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraint.layout)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.commonmark)
 
     testImplementation(libs.junit)
 

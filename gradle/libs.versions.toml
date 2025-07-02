@@ -16,6 +16,7 @@ kotlin = "2.1.20"
 min_sdk_version = "23"
 target_sdk_version = "34"
 benmanesversion = "0.52.0"
+commonmark = "0.21.0"
 
 [libraries]
 junit = { module = "junit:junit", version.ref = "junit" }
@@ -34,6 +35,7 @@ compose_ui = { module = "androidx.compose.ui:ui" }
 compose_ui_tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose_ui_test_junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 compose_ui_test_manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+commonmark = { module = "com.atlassian.commonmark:commonmark", version.ref = "commonmark" }
 detekt_formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 espresso_core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso.core" }
 agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
